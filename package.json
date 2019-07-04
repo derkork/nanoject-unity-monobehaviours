@@ -1,0 +1,15 @@
+{
+    "name": "com.ancientlightstudios.nanoject-monobehaviours",
+    "version": "1.0.0",
+    "displayName": "Nanoject - MonoBehaviours",
+    "description": "Extension for declaring MonoBehaviours with Nanoject.",
+    "unity": "2019.1",
+    "dependencies": {
+        "com.ancientlightstudios.nanoject": "https://github.com/derkork/nanoject-unity.git#2.0.0"
+    },
+    "author": {
+        "name": "Jan Thom\u00e4, Ancient Light Studios",
+        "email": "jan@ancientlightstudios.com",
+        "url": "https://github.com/derkork/nanoject-unity-monobehaviours"
+    }
+}

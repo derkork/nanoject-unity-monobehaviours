@@ -1,0 +1,21 @@
+{
+    "name": "AncientLightStudios.Nanoject.MonoBehaviours.EditorTests",
+    "references": [
+        "AncientLightStudios.Nanoject",
+        "AncientLightStudios.Nanoject.MonoBehaviours",
+        "AncientLightStudios.Nanoject.MonoBehaviours.PlayModeTests"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

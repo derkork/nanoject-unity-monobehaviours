@@ -1,0 +1,17 @@
+{
+    "name": "AncientLightStudios.Nanoject.MonoBehaviours.PlayModeTests",
+    "references": [
+        "GUID:c2246ff72eca21f438bb4b5917f9a7f4"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
