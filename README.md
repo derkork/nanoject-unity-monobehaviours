@@ -9,9 +9,7 @@ In order to install this package to your Unity project, open `Packages\manifest.
 
 ```json
 "dependencies" : {
-    ...
     "com.ancientlightstudios.nanoject-monobehaviours": "https://github.com/derkork/nanoject-unity-monobehaviours.git#1.0.0"
-    ...
 }
 ```
 
