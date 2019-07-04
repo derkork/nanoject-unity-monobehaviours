@@ -5,14 +5,16 @@ Nanoject MonoBehaviours is an extension for the [Nanoject](https://github.com/de
 
 ## Installation
 
-In order to install this package to your Unity project, open `Packages\manifest.json` and add the following dependency:
+In order to install this package to your Unity project, open `Packages\manifest.json` and add the following dependencies:
 
 ```json
 "dependencies" : {
+    "com.ancientlightstudios.nanoject": "https://github.com/derkork/nanoject-unity.git#2.0.0"
     "com.ancientlightstudios.nanoject-monobehaviours": "https://github.com/derkork/nanoject-unity-monobehaviours.git#1.0.0"
 }
 ```
 
+Unity currently does not support transitive dependency management for Git, so you will have to enter both URLs.
 ## Basic Usage
 
 Use the `DeclareMonoBehavioursFromScene` extension method on `DependencyContext` to scan the current scene for suitable `MonoBehaviours` and declare them:
