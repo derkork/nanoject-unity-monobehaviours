@@ -1,13 +1,12 @@
 ﻿namespace AncientLightStudios.Nanoject.Tests
 {
     using System.Collections.Generic;
-    using AncientLightStudios.Nanoject;
-    using AncientLightStudios.Nanoject.MonoBehaviours;
+    using MonoBehaviours;
     using NUnit.Framework;
     using UnityEngine;
 
     [TestFixture]
-    public class Tests
+    public class MonoBehaviourTests
     {
         private DependencyContext _context;
         private List<GameObject> _dispose;
@@ -42,7 +41,7 @@
             var behaviour = go.AddComponent<SimpleBehaviour>();
             
             _context.Declare<SimpleService>();
-            _context.DeclareMonoBehaviourFromScene<SimpleBehaviour>();
+            _context.DeclareMonoBehavioursFromScene<SimpleBehaviour>();
             _context.Resolve();
 
             Assert.AreSame(_context.Get<SimpleService>(), behaviour.SimpleService);
@@ -58,7 +57,7 @@
             
             _context.Declare<SimpleService>();
             _context.Declare<BehaviourHolder>();
-            _context.DeclareMonoBehaviourFromScene<SimpleBehaviour>();
+            _context.DeclareMonoBehavioursFromScene<SimpleBehaviour>();
             _context.Resolve();
 
             Assert.AreSame(behaviour, _context.Get<BehaviourHolder>().SimpleBehaviour);
@@ -99,7 +98,7 @@
 
             _context.Declare<SimpleService>();
             _context.DeclareMonoBehavioursFromSceneQualified<SimpleBehaviour>();
-            _context.DeclareMonoBehaviourFromScene<BehaviourWithQualifiedReferences>();
+            _context.DeclareMonoBehavioursFromScene<BehaviourWithQualifiedReferences>();
             _context.Resolve();
 
             Assert.AreSame(first, component.First);

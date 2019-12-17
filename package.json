@@ -1,11 +1,11 @@
 {
     "name": "com.ancientlightstudios.nanoject-monobehaviours",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "displayName": "Nanoject - MonoBehaviours",
     "description": "Extension for declaring MonoBehaviours with Nanoject.",
     "unity": "2019.1",
     "dependencies": {
-        "com.ancientlightstudios.nanoject": "2.0.0"
+        "com.ancientlightstudios.nanoject": "3.0.0"
     },
     "author": {
         "name": "Jan Thom\u00e4, Ancient Light Studios",

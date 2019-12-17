@@ -9,8 +9,8 @@ In order to install this package to your Unity project, open `Packages\manifest.
 
 ```json
 "dependencies" : {
-    "com.ancientlightstudios.nanoject": "https://github.com/derkork/nanoject-unity.git#2.0.0"
-    "com.ancientlightstudios.nanoject-monobehaviours": "https://github.com/derkork/nanoject-unity-monobehaviours.git#1.0.0"
+    "com.ancientlightstudios.nanoject": "https://github.com/derkork/nanoject-unity.git#3.0.0"
+    "com.ancientlightstudios.nanoject-monobehaviours": "https://github.com/derkork/nanoject-unity-monobehaviours.git#2.0.0"
 }
 ```
 
@@ -19,31 +19,29 @@ Unity currently does not support transitive dependency management for Git, so yo
 
 Use the `DeclareMonoBehavioursFromScene` extension method on `DependencyContext` to scan the current scene for suitable `MonoBehaviours` and declare them:
 
-```csharp
+```c#
 // new context
 var context = new DependencyContext();
 
 // declare the objects that you want to fetch from the scene
-context.DeclareMonoBehaviourFromScene<MyMonoBehaviour>();
-context.DeclareMonoBehaviourFromScene<MyOtherMonoBehaviour>();
+context.DeclareMonoBehavioursFromScene<MyMonoBehaviour>();
+context.DeclareMonoBehavioursFromScene<MyOtherMonoBehaviour>();
 
 // declare the objects that need references from the scene
 context.Declare<MyService>();
 
 context.Resolve();
-
 ```
 
 ## How can I ...
 
 ### Fetch a specific object from the scene if I have multiple of them?
 
-In case you use Unity's GUI system you might want to fetch references to buttons, etc. You can do this by using a qualifier. The qualifier must be the object's name in the scene hierarchy. For example if you have two buttons `nextButton` and `previousButton` in your scene hierarchy and want to inject them into a service that should handle the clicks, you can do it like this:
+In case you use Unity's GUI system you might want to fetch references to buttons, etc. You can do this by using a qualifier. The qualifier is the object's name in the scene hierarchy. For example if you have two buttons named `nextButton` and `previousButton` in your scene hierarchy and want to inject them into a service that should handle the clicks, you can do it like this:
 
-```csharp
+```c#
 // declare all buttons from the scene using their name as qualifier.
 context.DeclareMonoBehavioursFromSceneQualified<Button>();
-
 
 // then in your service just reference them:
 public class UIService {
@@ -59,7 +57,7 @@ public class UIService {
 
 `MonoBehaviour`s are managed by Unity, so constructor injection does not work for them. In order to have dependencies injected into your `MonoBehaviours` you can add a method that is annotated with the `LateInit` attribute:
 
-```csharp
+```c#
 public class MyBehaviour : MonoBehaviour {
     private MyService _myService;
 
@@ -74,7 +72,7 @@ public class MyBehaviour : MonoBehaviour {
 
 This method will be called when the context is resolved. You can also use qualifiers. For example if you want to reference the `nextButton` and `previousButton` from the previous example, you could do it like this:
 
-```csharp
+```c#
 public class MyUIBehaviour : MonoBehaviour {
     private Button _nextButton;
     private Button _previousButton;
